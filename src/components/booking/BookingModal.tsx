@@ -304,7 +304,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, initialSer
           
           {/* Progress Steps */}
           <div className="flex items-center space-x-2">
-            {steps.map((step, index) => (
+            {[steps?.[0]].map((step, index) => (
               <div key={index} className="flex items-center">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
                   index + 1 === currentStep 
