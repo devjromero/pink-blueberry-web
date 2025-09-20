@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pink Blueberry Salon Design System - Luxury beauty brand colors and design tokens */
+
+@layer base {
+  :root {
+    /* Brand Colors - Pink Blueberry Salon */
+    --primary-pink: 330 81% 60%;           /* #ec4899 */
+    --primary-blue: 217 91% 60%;           /* #3b82f6 */
+    --light-pink: 336 84% 79%;            /* #f9a8d4 */
+    --light-blue: 213 97% 87%;            /* #93c5fd */
+    
+    /* Background & Surface Colors */
+    --background: 210 20% 98%;             /* #f8fafc */
+    --card: 0 0% 100%;                     /* White cards */
+    --card-foreground: 215 28% 17%;        /* #1e293b */
+    
+    /* Text Colors */
+    --foreground: 215 28% 17%;             /* #1e293b - Dark text */
+    --muted-foreground: 215 16% 47%;       /* #64748b - Light text */
+    
+    /* Interactive Elements */
+    --primary: 330 81% 60%;                /* Pink primary */
+    --primary-foreground: 0 0% 100%;       /* White on pink */
+    --secondary: 213 97% 87%;              /* Light blue */
+    --secondary-foreground: 215 28% 17%;   /* Dark on light blue */
+    
+    /* Form & Input Colors */
+    --input: 220 13% 91%;                  /* Light gray inputs */
+    --border: 220 13% 91%;                 /* Light borders */
+    --ring: 330 81% 60%;                   /* Pink focus ring */
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(330 81% 60%) 0%, hsl(217 91% 60%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(330 81% 60% / 0.9) 0%, hsl(217 91% 60% / 0.9) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(336 84% 79% / 0.1) 0%, hsl(213 97% 87% / 0.1) 100%);
+    
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(215 28% 17% / 0.1);
+    --shadow-card-hover: 0 10px 25px -3px hsl(215 28% 17% / 0.1);
+    --shadow-button: 0 4px 14px 0 hsl(330 81% 60% / 0.39);
+    
+    /* Spacing & Layout */
+    --radius: 1rem;                        /* 16px border radius */
+    --radius-sm: 0.75rem;                  /* 12px for buttons */
+    --radius-lg: 1.5rem;                   /* 24px for cards */
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Pink Blueberry Salon Component Styles */
+@layer components {
+  /* Hero Button with Gradient */
+  .btn-hero {
+    @apply inline-flex items-center justify-center px-6 py-3 text-white font-medium;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-button);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+  }
+  
+  /* Secondary Button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 font-medium;
+    @apply border-2 border-primary text-primary bg-transparent;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-primary text-primary-foreground;
+    transform: translateY(-2px);
+  }
+  
+  /* Salon Card Styles */
+  .salon-card {
+    @apply bg-card p-6 rounded-2xl;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    border-radius: var(--radius-lg);
+    transition: all 0.3s ease;
+  }
+  
+  .salon-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+  }
+  
+  /* Service Price Display */
+  .price-display {
+    @apply text-2xl font-bold;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Hero Section Background */
+  .hero-bg {
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    opacity: 0.3;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
