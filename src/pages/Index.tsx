@@ -132,7 +132,7 @@ const Index = () => {
         </section>
 
         {/* Reviews Section */}
-        <ReviewsSection />
+        <ReviewsSection onBookingClick={() => openBooking()} />
 
         {/* Call to Action Section */}
         <section className="py-20 px-4 hero-bg">

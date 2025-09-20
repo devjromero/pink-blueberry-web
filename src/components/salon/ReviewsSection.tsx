@@ -11,6 +11,10 @@ interface Review {
   image?: string;
 }
 
+interface ReviewsSectionProps {
+  onBookingClick?: () => void;
+}
+
 const mockReviews: Review[] = [
   {
     id: 1,
@@ -124,7 +128,7 @@ const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
   );
 };
 
-const ReviewsSection: React.FC = () => {
+const ReviewsSection: React.FC<ReviewsSectionProps> = ({ onBookingClick }) => {
   const averageRating = mockReviews.reduce((acc, review) => acc + review.rating, 0) / mockReviews.length;
   const totalReviews = mockReviews.length;
 
@@ -176,7 +180,10 @@ const ReviewsSection: React.FC = () => {
             <p className="text-muted-foreground mb-6">
               Join hundreds of satisfied clients and book your luxury salon experience today
             </p>
-            <button className="btn-hero">
+            <button 
+              className="btn-hero"
+              onClick={onBookingClick}
+            >
               Book Your Appointment
             </button>
           </div>
