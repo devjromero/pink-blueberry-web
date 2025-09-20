@@ -5,6 +5,7 @@ import HeroSection from '@/components/salon/HeroSection';
 import ServiceCard from '@/components/salon/ServiceCard';
 import ProductCard from '@/components/salon/ProductCard';
 import StylistCard from '@/components/salon/StylistCard';
+import ReviewsSection from '@/components/salon/ReviewsSection';
 import ShoppingCart from '@/components/cart/ShoppingCart';
 import BookingModal from '@/components/booking/BookingModal';
 import { services, products, stylists } from '@/data/salonData';
@@ -18,11 +19,6 @@ const Index = () => {
   const openBooking = (service?: Service) => {
     setSelectedService(service);
     setIsBookingOpen(true);
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    // (window as any)?.Calendly?.initPopupWidget({
-    //   url: 'https://calendly.com/vs-pink-blueberry'
-    // });
   };
 
   
@@ -134,6 +130,9 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* Reviews Section */}
+        <ReviewsSection />
 
         {/* Call to Action Section */}
         <section className="py-20 px-4 hero-bg">

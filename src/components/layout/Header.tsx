@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShoppingBag, Calendar, Sparkles } from 'lucide-react';
 import { useCart } from '@/hooks/useCartHook';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
 
 interface HeaderProps {
   onBookingClick?: () => void;
@@ -42,6 +43,8 @@ const Header: React.FC<HeaderProps> = ({ onBookingClick }) => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
+            <ThemeToggle />
+            
             <button
               onClick={onBookingClick}
               className="btn-hero flex items-center space-x-2"
